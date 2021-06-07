@@ -1,0 +1,255 @@
+body{
+  background-color: rgb(230,230,230);
+}
+
+
+input{
+}
+/* Slider */
+.visual__slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 350px;
+  height: 2px;
+  background: rgb(11, 62, 96);
+  outline: none;
+  opacity: 1;
+  -webkit-transition: 0s;
+  /* transform: rotateZ(270deg); */
+}
+
+.visual__slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: white;
+  box-shadow: 0px 0px 8px lightgrey;
+
+}
+
+
+.sound__button{
+  -webkit-appearance: none;
+  border:none;
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  background-color: #f3f3f3;
+  outline: none;
+  opacity: 1;
+  transition: all 0.1s;
+  cursor: pointer;
+}
+
+.button__one:hover{
+  background-color: #f34444;
+}
+
+.button__two{
+  background-color: #f48a53;
+  transition: all 0.5s;
+}
+
+.button__two_selected{
+  background-color: #a3cab8;
+}
+
+
+.button_one_wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+}
+
+.button_change_one{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(212, 49, 93);
+  border-radius: 50%;
+  margin-left:36px;
+  margin-top:10px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.button_change_one_two{
+  margin-left:25px;
+  margin-top:40px;
+  border-radius: 0 0% 50% 50%;
+
+}
+
+.button_change_one_three{
+  margin-left:9px;
+  margin-top:20px;
+  border-radius: 50% 10% 50% 50%;
+}
+
+.button_two_wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 15%;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+}
+
+.button_change_two{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(164, 186, 223);
+  border-radius: 20% 0 20% 0;
+  margin-left: 40px;
+  margin-top: 40px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.button_change_two_two{
+  margin-left:50px;
+  margin-top:9px;
+  width: 40px;
+  height: 80px;
+  border-radius: 0 10px 10px 0%;
+
+}
+
+.button_change_two_three{
+  margin-left:9px;
+  margin-top:9px;
+  width: 60px;
+  height: 40px;
+  border-radius: 10px 15px 15px 2px;
+}
+
+.button_three_wrapper {
+  width: 100px;
+  height: 100px;
+  background-color: white;
+  border-radius: 10% 40% 40% 40%;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+}
+
+.button_change_three{
+  width: 50px;
+  height: 50px;
+  background-color: rgb(250, 209, 87);
+  border-radius: 5% 35% 35% 35%;
+  margin-left: 9px;
+  margin-top: 9px;
+  transition: all 0.3s ease-in;
+  cursor: pointer;
+}
+
+.button_change_three_two{
+  margin-left:53px;
+  margin-top:9px;
+  width: 40px;
+  height: 80px;
+  border-radius: 3px 30px 30px 2px;
+}
+
+.button_change_three_three{
+  margin-left:9px;
+  margin-top:40px;
+  width: 60px;
+  height: 50px;
+  border-radius: 10px 0% 20px 30px;
+}
+
+.button_change_base{
+  width: 140px;
+  height: 140px;
+  background-color: white;
+  border-radius: 50% 2% 50% 50%;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+  transform: rotate(16deg);
+  transition: all 0.3s ease-in;
+
+
+}
+
+.button_change_base_two{
+    transform: rotate(45deg);
+}
+
+.button_change_base_three{
+    transform: rotate(72deg);
+}
+
+.light{
+  width: 12px;
+  height: 12px;
+  background-color: rgb(11, 62, 96);
+  border-radius: 50%;
+}
+
+.light_active{
+  background-color: lightgreen;
+}
+
+.menu_background{
+  width: 944px;
+  height: 240px;
+  background-color: white;
+  border-radius: 40px 40px 0 0;
+}
+
+.button_add_details{
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.button_remove_details{
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 0px 8px lightgrey;
+  cursor: pointer;
+  transform: rotate(45deg);
+}
+
+.plus_one{
+  width: 35px;
+  height:5px;
+  background-color: lightgrey;
+  border-radius: 50px;
+}
+
+.plus_two{
+  width:5px;
+  height:35px;
+  background-color: lightgrey;
+  border-radius: 50px;
+}
+
+.minus{
+  width: 35px;
+  height:5px;
+  background-color: lightgrey;
+  border-radius: 50px;
+}
+
+.line{
+  cursor:pointer;
+  transition: all 0.2s ease;
+}
+
+.colored_line{
+  background-color: rgb(11, 62, 96);
+
+}
