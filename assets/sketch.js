@@ -58,6 +58,7 @@ window.addEventListener('load', (event) => {
 		processTime: false,//does not automatically save and send data
 		processData: function(results){
 				console.log("process", results);
+				savedata(results);
 		},
 	});
 	
@@ -416,7 +417,37 @@ function close(){
 	userBehaviour.processResults();
 }
 
+function savedata(results){
+	var dataToSave = new FormData();
+  dataToSave.append("payload", JSON.stringify(results));
+	
+	$.ajax({
+			url: "./api/index.php",
+			method: "POST",
+			contentType: false,
+			processData: false,
+			data: dataToSave,
+			success: function (data) {
+				save_success(data);
+			},
+			error: function (request, error) {
+				save_error(request, error);
+			},
+			timeout: 360000
+    });
+}
 
+function save_success(result){
+	if (result.status == "success") {
+		console.log("saved", result);
+	}else{
+		save_error("error:", result)
+	}
+}
+
+function save_error(request,error){
+	console.error(request,error);
+}
 
 //FUNZIONI DI DRAW GENERALI
 
