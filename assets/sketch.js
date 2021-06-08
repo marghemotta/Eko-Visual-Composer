@@ -46,6 +46,7 @@ function preload() {
 }
 
 window.addEventListener('load', (event) => {
+
   userBehaviour.config(
 	{
 		userInfo: true,
@@ -66,6 +67,7 @@ window.addEventListener('load', (event) => {
 });
 
 function setup() {	
+
   createCanvas(1024, 768);
   angleMode(DEGREES);
   //menu
@@ -217,7 +219,7 @@ function setup() {
     modal__button = createDiv(" ");
     modal__button.position(402, 180);
     modal__button.class('finish-modal__label');
-    document.querySelector(".finish-modal__label").innerHTML = "<p>Sei arrivato alla fine!</p>"
+    document.querySelector(".finish-modal__label").innerHTML = "<p>Sei arrivato alla fine</p>"
   
     modal__button = createDiv(" ");
     modal__button.position(420, 530);
@@ -349,6 +351,10 @@ function setup() {
 
 	isLoaded = true;
   
+  console.log("ECCO");
+
+document.querySelector(".loader").classList.add("hide");
+
 }
 
 function draw() {
@@ -443,6 +449,9 @@ function draw() {
   }
 
 }
+
+
+
 
 function close(){
 	userBehaviour.stop();
