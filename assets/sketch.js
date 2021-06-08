@@ -75,6 +75,12 @@ function setup() {
   menu_background.position(40, 528);
   menu_background.class('menu_background');
 
+  button_close = createDiv(" ");
+  button_close.position(954, 50);
+  button_close.class('button__close');
+  
+
+
   button_one_wrapper = createDiv(" ");
   button_one_wrapper.position(330, 570);
   button_one_wrapper.class('button_one_wrapper');

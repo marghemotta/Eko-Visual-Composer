@@ -57,6 +57,30 @@ input{
   background-color: #a3cab8;
 }
 
+.button__close{
+  width: 70px;
+  height: 50px;
+  background-color: white;
+  border-radius: 20px  0 0 20px;
+  cursor: pointer;
+}
+
+.button__close:after {
+  content: " ";
+  display: block;
+  width: 12px; 
+  height: 20px;
+  border: solid rgb(21, 76, 85);
+  border-width: 0 0.2em 0.2em 0;
+  position: absolute;
+  left: 20px;
+  top: 26%;
+  margin-top: -0.2em;
+  -webkit-transform: rotate(45deg); 
+  -moz-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
 
 .button_one_wrapper {
   width: 100px;
