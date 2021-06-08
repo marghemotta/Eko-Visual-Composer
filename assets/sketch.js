@@ -214,7 +214,7 @@ function setup() {
     modal = createDiv(" ");
     modal.position(150, 150);
     modal.class('finish-modal');
-    document.querySelector(".finish-modal").innerHTML = "<div class='finish-modal__text'>Grazie per aver giocato con noi!</div>"
+    document.querySelector(".finish-modal").innerHTML = "<div class='finish-modal__text'>Grazie per aver giocato con Ekō!</div>"
 
     modal__button = createDiv(" ");
     modal__button.position(402, 180);
