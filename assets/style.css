@@ -1,7 +1,10 @@
 body{
   background-color: rgb(230,230,230);
 }
-
+@font-face {
+  font-family: 'Montserrat';
+  src: url('Montserrat-Medium.ttf');
+}
 
 input{
 }
@@ -27,6 +30,82 @@ input{
   cursor: pointer;
   background: white;
   box-shadow: 0px 0px 8px lightgrey;
+}
+
+.finish-modal__wrapper{
+  width: 1024px;
+  height: 768px;
+  background-color: rgba(255,255,255,0.9);
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.finish-modal{
+  width: 724px;
+  height: 468px;
+  background-color: rgb(164, 186, 223);
+  border-radius: 60px;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 8px lightgrey;
+
+}
+
+.finish-modal__text{
+  max-width: 650px;
+  transform: translateY(-10px);
+  color: white;
+  font-size: 68px;
+  line-height: 100%;
+  text-align: center;
+  font-family: 'Montserrat';
+}
+
+.finish-modal__button{
+  padding: 0px 25px;
+  background: white;
+  color:rgb(212, 49, 93);
+  text-align: center;
+  border-radius: 20px;
+  font-family: 'Montserrat';
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+}
+.finish-modal__button:hover{
+  opacity: 0.6;
+}
+.finish-modal__label{
+  line-height: 0;
+  font-family: 'Montserrat';
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+}
+
+.finish-modal__label{
+  color: white;
+}
+
+.show{
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
 
 }
 

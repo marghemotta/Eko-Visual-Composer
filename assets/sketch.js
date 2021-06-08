@@ -78,8 +78,6 @@ function setup() {
   button_close = createDiv(" ");
   button_close.position(954, 50);
   button_close.class('button__close');
-  
-
 
   button_one_wrapper = createDiv(" ");
   button_one_wrapper.position(330, 570);
@@ -158,6 +156,8 @@ function setup() {
   light_seven.class('light light_seven');
 
 
+
+
   //suoni
   amplitude__one = new p5.Amplitude();
   amplitude__one.setInput(sound__one)
@@ -201,6 +201,28 @@ function setup() {
   slider__one = createSlider(1, 5, 1);
   slider__one.position(337, 720);
   slider__one.class('visual__slider slider__one');
+
+    //modale di chiusura
+
+    modal__wrapper = createDiv(" ");
+    modal__wrapper.position(0, 0);
+    modal__wrapper.class('finish-modal__wrapper');
+  
+  
+    modal = createDiv(" ");
+    modal.position(150, 150);
+    modal.class('finish-modal');
+    document.querySelector(".finish-modal").innerHTML = "<div class='finish-modal__text'>Grazie per aver giocato con noi!</div>"
+
+    modal__button = createDiv(" ");
+    modal__button.position(402, 180);
+    modal__button.class('finish-modal__label');
+    document.querySelector(".finish-modal__label").innerHTML = "<p>Sei arrivato alla fine!</p>"
+  
+    modal__button = createDiv(" ");
+    modal__button.position(420, 530);
+    modal__button.class('finish-modal__button');
+    document.querySelector(".finish-modal__button").innerHTML = "<p>Gioca ancora</p>"
 
 
   //COLORI
@@ -302,9 +324,14 @@ function setup() {
 
   document.querySelector(".minus").classList.add("colored_line");
 	
-	/*document.querySelector(".close").addEventListener("click", function() {
+	document.querySelector(".button__close").addEventListener("click", function() {
     close();
-  })*/
+  })
+
+  document.querySelector(".finish-modal__button").addEventListener("click", function() {
+    hideModal();
+  })
+
 
 	songsArray = [
 		 amplitude__one,
@@ -423,6 +450,28 @@ function close(){
 	userBehaviour.processResults();
 }
 
+function showModal(){
+ document.querySelector(".finish-modal__wrapper").classList.add("show");
+ setTimeout(() => {
+  document.querySelector(".finish-modal").classList.add("show");
+ }, 400);
+ setTimeout(() => {
+  document.querySelector(".finish-modal__button").classList.add("show");
+  document.querySelector(".finish-modal__label").classList.add("show");
+
+ }, 700);
+}
+
+function hideModal(){
+  document.querySelector(".finish-modal__wrapper").classList.remove("show");
+  document.querySelector(".finish-modal").classList.remove("show");
+  document.querySelector(".finish-modal__button").classList.remove("show");
+  document.querySelector(".finish-modal__label").classList.remove("show");
+  setTimeout(() => {
+    location.reload();
+    return false;   }, 400);
+}
+
 function savedata(results){
 	var dataToSave = new FormData();
   dataToSave.append("payload", JSON.stringify(results));
@@ -435,9 +484,11 @@ function savedata(results){
 			data: dataToSave,
 			success: function (data) {
 				save_success(data);
+        showModal()
 			},
 			error: function (request, error) {
 				save_error(request, error);
+        showModal()
 			},
 			timeout: 360000
     });
