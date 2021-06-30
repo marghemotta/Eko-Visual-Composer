@@ -25,6 +25,32 @@ body{
   transition: all 0.3s ease;
 }
 
+.button__start{
+  font-size: 2vw;
+  padding: 10px 20px;
+  border-radius: 100px;
+  background-color: rgb(212, 49, 93);
+  color: white;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) }
+
+.visible{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.logo{
+  transition: all 0.3s ease;
+}
 
 
 .hide{

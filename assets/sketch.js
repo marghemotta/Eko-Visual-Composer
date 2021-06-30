@@ -2,11 +2,11 @@ var slot__base_one = 'sounds/_init/yoshimura.mp3';
 var slot__base_two = 'sounds/_init/yoshimura2.mp3';
 var slot__base_three = 'sounds/_init/japanese1.mp3';
 
-var slot__one = 'sounds/main/1.mp3';
-var slot__two = 'sounds/main/2.mp3';
-var slot__three = 'sounds/main/3.mp3';
-var slot__four = 'sounds/main/4.mp3';
-var slot__five = 'sounds/main/5.mp3';
+var slot__one = 'sounds/main/1.wav';
+var slot__two = 'sounds/main/2.wav';
+var slot__three = 'sounds/main/3.wav';
+var slot__four = 'sounds/main/4.wav';
+var slot__five = 'sounds/main/5.wav';
 
 var button__one__value = 2;
 var button__two__value = 1;
@@ -353,8 +353,18 @@ function setup() {
   
   console.log("ECCO");
 
-document.querySelector(".loader").classList.add("hide");
+document.querySelector(".logo").classList.add("hide");
+setTimeout(() => {
+  document.querySelector(".button__start").classList.add("visible");
 
+}, 500);
+
+document.querySelector(".button__start").addEventListener("click", function() {
+  console.log("ciao")
+  document.querySelector(".loader").classList.add("hide");
+  document.querySelector(".button__start").classList.remove("visible");
+
+})
 }
 
 function draw() {
@@ -1687,7 +1697,7 @@ function sound_three(song) {
 }
 
 function sound_four(song) {
-  song.setVolume(0.5);
+  song.setVolume(1);
   setInterval(function() {
     if (song.isPlaying()) {
       song.pause();
@@ -1698,7 +1708,7 @@ function sound_four(song) {
 }
 
 function sound_five(song) {
-  song.setVolume(0.5);
+  song.setVolume(1);
   setInterval(function() {
     if (song.isPlaying()) {
       song.pause();
