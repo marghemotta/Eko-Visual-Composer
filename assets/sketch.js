@@ -48,25 +48,25 @@ function preload() {
 window.addEventListener('load', (event) => {
 
   userBehaviour.config(
-	{
-		userInfo: true,
-		clicks: true,
-		mouseMovement: true,
-		mouseMovementInterval: 1,
-		mouseScroll: true,
-		timeCount: true,
-		clearAfterProcess: true,
-		processTime: false,//does not automatically save and send data
-		processData: function(results){
-				console.log("process", results);
-				savedata(results);
-		},
-	});
-	
-	userBehaviour.start();	
+    {
+      userInfo: true,
+      clicks: true,
+      mouseMovement: true,
+      mouseMovementInterval: 1,
+      mouseScroll: true,
+      timeCount: true,
+      clearAfterProcess: true,
+      processTime: false,//does not automatically save and send data
+      processData: function (results) {
+        console.log("process", results);
+        savedata(results);
+      },
+    });
+
+  userBehaviour.start();
 });
 
-function setup() {	
+function setup() {
 
   createCanvas(1024, 768);
   angleMode(DEGREES);
@@ -204,27 +204,27 @@ function setup() {
   slider__one.position(337, 720);
   slider__one.class('visual__slider slider__one');
 
-    //modale di chiusura
+  //modale di chiusura
 
-    modal__wrapper = createDiv(" ");
-    modal__wrapper.position(0, 0);
-    modal__wrapper.class('finish-modal__wrapper');
-  
-  
-    modal = createDiv(" ");
-    modal.position(150, 150);
-    modal.class('finish-modal');
-    document.querySelector(".finish-modal").innerHTML = "<div class='finish-modal__text'>Grazie per aver giocato con Ekō!</div>"
+  modal__wrapper = createDiv(" ");
+  modal__wrapper.position(0, 0);
+  modal__wrapper.class('finish-modal__wrapper');
 
-    modal__button = createDiv(" ");
-    modal__button.position(402, 180);
-    modal__button.class('finish-modal__label');
-    document.querySelector(".finish-modal__label").innerHTML = "<p>Sei arrivato alla fine</p>"
-  
-    modal__button = createDiv(" ");
-    modal__button.position(420, 530);
-    modal__button.class('finish-modal__button');
-    document.querySelector(".finish-modal__button").innerHTML = "<p>Gioca ancora</p>"
+
+  modal = createDiv(" ");
+  modal.position(150, 150);
+  modal.class('finish-modal');
+  document.querySelector(".finish-modal").innerHTML = "<div class='finish-modal__text'>Grazie per aver giocato con Ekō!</div>"
+
+  modal__button = createDiv(" ");
+  modal__button.position(402, 180);
+  modal__button.class('finish-modal__label');
+  document.querySelector(".finish-modal__label").innerHTML = "<p>Sei arrivato alla fine</p>"
+
+  modal__button = createDiv(" ");
+  modal__button.position(420, 530);
+  modal__button.class('finish-modal__button');
+  document.querySelector(".finish-modal__button").innerHTML = "<p>Gioca ancora</p>"
 
 
   //COLORI
@@ -257,34 +257,34 @@ function setup() {
   color7 = color__hot_pink;
   color8 = color__white;
   //fetchData()
-	
 
-  document.querySelector(".button_one_wrapper").addEventListener("click", function() {
+
+  document.querySelector(".button_one_wrapper").addEventListener("click", function () {
     button_one_clicked();
   })
-  document.querySelector(".button_change_one").addEventListener("click", function() {
+  document.querySelector(".button_change_one").addEventListener("click", function () {
     button_one_clicked();
   })
 
-  document.querySelector(".button_two_wrapper").addEventListener("click", function() {
+  document.querySelector(".button_two_wrapper").addEventListener("click", function () {
     button_two_clicked();
   })
-  document.querySelector(".button_change_two").addEventListener("click", function() {
+  document.querySelector(".button_change_two").addEventListener("click", function () {
     button_two_clicked();
   })
 
-  document.querySelector(".button_three_wrapper").addEventListener("click", function() {
+  document.querySelector(".button_three_wrapper").addEventListener("click", function () {
     button_three_clicked();
   })
-  document.querySelector(".button_change_three").addEventListener("click", function() {
+  document.querySelector(".button_change_three").addEventListener("click", function () {
     button_three_clicked();
   })
 
-  document.querySelector(".button_change_base").addEventListener("click", function() {
+  document.querySelector(".button_change_base").addEventListener("click", function () {
     button_change_base_clicked();
   })
 
-  document.querySelector(".button_add_details").addEventListener("click", function() {
+  document.querySelector(".button_add_details").addEventListener("click", function () {
     add_details_value = 1;
     document.querySelector(".minus").classList.add("colored_line");
     document.querySelector(".plus_one").classList.remove("colored_line");
@@ -292,28 +292,28 @@ function setup() {
 
   })
 
-  document.querySelector(".plus_one").addEventListener("click", function() {
+  document.querySelector(".plus_one").addEventListener("click", function () {
     add_details_value = 1;
     document.querySelector(".minus").classList.add("colored_line");
     document.querySelector(".plus_one").classList.remove("colored_line");
     document.querySelector(".plus_two").classList.remove("colored_line");
   })
 
-  document.querySelector(".plus_two").addEventListener("click", function() {
+  document.querySelector(".plus_two").addEventListener("click", function () {
     add_details_value = 1;
     document.querySelector(".minus").classList.add("colored_line");
     document.querySelector(".plus_one").classList.remove("colored_line");
     document.querySelector(".plus_two").classList.remove("colored_line");
   })
 
-  document.querySelector(".button_remove_details").addEventListener("click", function() {
+  document.querySelector(".button_remove_details").addEventListener("click", function () {
     add_details_value = 2;
     document.querySelector(".minus").classList.remove("colored_line");
     document.querySelector(".plus_one").classList.add("colored_line");
     document.querySelector(".plus_two").classList.add("colored_line");
   })
 
-  document.querySelector(".minus").addEventListener("click", function() {
+  document.querySelector(".minus").addEventListener("click", function () {
     add_details_value = 2;
     document.querySelector(".plus_one").classList.add("colored_line");
     document.querySelector(".plus_two").classList.add("colored_line");
@@ -325,46 +325,43 @@ function setup() {
 
 
   document.querySelector(".minus").classList.add("colored_line");
-	
-	document.querySelector(".button__close").addEventListener("click", function() {
+
+  document.querySelector(".button__close").addEventListener("click", function () {
     close();
   })
 
-  document.querySelector(".finish-modal__button").addEventListener("click", function() {
+  document.querySelector(".finish-modal__button").addEventListener("click", function () {
     hideModal();
   })
 
 
-	songsArray = [
-		 amplitude__one,
-		 amplitude__two,
-		 amplitude__three,
-		 amplitude__four,
-		 amplitude__five,
-	 ]
-	 sound__base_one.loop();
-	 sound__one.loop();
-	 sound_two(sound__two);
-	 sound_three(sound__three);
-	 sound_four(sound__four);
-	 sound_five(sound__five)
+  songsArray = [
+    amplitude__one,
+    amplitude__two,
+    amplitude__three,
+    amplitude__four,
+    amplitude__five,
+  ]
+  sound__base_one.loop();
+  sound__one.loop();
+  sound_two(sound__two);
+  sound_three(sound__three);
+  sound_four(sound__four);
+  sound_five(sound__five)
 
-	isLoaded = true;
-  
-  console.log("ECCO");
+  isLoaded = true;
 
-document.querySelector(".logo").classList.add("hide");
-setTimeout(() => {
-  document.querySelector(".button__start").classList.add("visible");
+  document.querySelector(".logo").classList.add("hide");
+  setTimeout(() => {
+    document.querySelector(".button__start").classList.add("visible");
 
-}, 500);
+  }, 500);
 
-document.querySelector(".button__start").addEventListener("click", function() {
-  console.log("ciao")
-  document.querySelector(".loader").classList.add("hide");
-  document.querySelector(".button__start").classList.remove("visible");
+  document.querySelector(".button__start").addEventListener("click", function () {
+    document.querySelector(".loader").classList.add("hide");
+    document.querySelector(".button__start").classList.remove("visible");
 
-})
+  })
 }
 
 function draw() {
@@ -463,66 +460,67 @@ function draw() {
 
 
 
-function close(){
-	userBehaviour.stop();
-	userBehaviour.showResult();
-	userBehaviour.processResults();
+function close() {
+  userBehaviour.stop();
+  userBehaviour.showResult();
+  userBehaviour.processResults();
 }
 
-function showModal(){
- document.querySelector(".finish-modal__wrapper").classList.add("show");
- setTimeout(() => {
-  document.querySelector(".finish-modal").classList.add("show");
- }, 400);
- setTimeout(() => {
-  document.querySelector(".finish-modal__button").classList.add("show");
-  document.querySelector(".finish-modal__label").classList.add("show");
+function showModal() {
+  document.querySelector(".finish-modal__wrapper").classList.add("show");
+  setTimeout(() => {
+    document.querySelector(".finish-modal").classList.add("show");
+  }, 400);
+  setTimeout(() => {
+    document.querySelector(".finish-modal__button").classList.add("show");
+    document.querySelector(".finish-modal__label").classList.add("show");
 
- }, 700);
+  }, 700);
 }
 
-function hideModal(){
+function hideModal() {
   document.querySelector(".finish-modal__wrapper").classList.remove("show");
   document.querySelector(".finish-modal").classList.remove("show");
   document.querySelector(".finish-modal__button").classList.remove("show");
   document.querySelector(".finish-modal__label").classList.remove("show");
   setTimeout(() => {
     location.reload();
-    return false;   }, 400);
+    return false;
+  }, 400);
 }
 
-function savedata(results){
-	var dataToSave = new FormData();
+function savedata(results) {
+  var dataToSave = new FormData();
   dataToSave.append("payload", JSON.stringify(results));
-	
-	$.ajax({
-			url: "./api/index.php",
-			method: "POST",
-			contentType: false,
-			processData: false,
-			data: dataToSave,
-			success: function (data) {
-				save_success(data);
-        showModal()
-			},
-			error: function (request, error) {
-				save_error(request, error);
-        showModal()
-			},
-			timeout: 360000
-    });
+
+  $.ajax({
+    url: "./api/index.php",
+    method: "POST",
+    contentType: false,
+    processData: false,
+    data: dataToSave,
+    success: function (data) {
+      save_success(data);
+      showModal()
+    },
+    error: function (request, error) {
+      save_error(request, error);
+      showModal()
+    },
+    timeout: 360000
+  });
 }
 
-function save_success(result){
-	if (result.status == "success") {
-		console.log("saved", result);
-	}else{
-		save_error("error:", result)
-	}
+function save_success(result) {
+  if (result.status == "success") {
+    console.log("saved", result);
+  } else {
+    save_error("error:", result)
+  }
 }
 
-function save_error(request,error){
-	console.error(request,error);
+function save_error(request, error) {
+  console.error(request, error);
 }
 
 //FUNZIONI DI DRAW GENERALI
@@ -791,7 +789,7 @@ function visual__two__three(color1, color2, color3, color4, color5, color6, colo
 
   noFill()
   stroke(color3)
-  line(410, 330 - rectLenght16 , 410, 150 + quad1y)
+  line(410, 330 - rectLenght16, 410, 150 + quad1y)
 
   noStroke()
   fill(color4);
@@ -800,23 +798,25 @@ function visual__two__three(color1, color2, color3, color4, color5, color6, colo
 
   fill(color3);
   rect(410 - rectLenght15 / 2, 40, 120 + rectLenght15 / 2, 100, 100, 0, 0, 100);
-    if(add_details_value==1){
-  fill(color1);
-  ellipse(460 - rectLenght15 / 2 + size4 * 1.5, 90, 80, 80)
-  fill(color6);
-  rect(530, 115, 40 + rectLenght16 / 2, 25, 0, 100, 0, 0);}
+  if (add_details_value == 1) {
+    fill(color1);
+    ellipse(460 - rectLenght15 / 2 + size4 * 1.5, 90, 80, 80)
+    fill(color6);
+    rect(530, 115, 40 + rectLenght16 / 2, 25, 0, 100, 0, 0);
+  }
   fill(color2);
   rect(530, 140, 60 - rectLenght16 / 3, 25);
   fill(color5);
   arc(515, 165, 150 + rectLenght17 / 2, 150 + rectLenght17 / 2, 360, 90);
   rect(470, 165, 50, 75 + rectLenght17 / 4)
   fill(color3);
-  rect(350, 165, 120, 165  - rectLenght16/2, 100, 0, 0, 0);
-  if(add_details_value==1){
-  fill(color6);
-  arc(410, 330 - rectLenght16/2, 123, 123, 180, 360)}
+  rect(350, 165, 120, 165 - rectLenght16 / 2, 100, 0, 0, 0);
+  if (add_details_value == 1) {
+    fill(color6);
+    arc(410, 330 - rectLenght16 / 2, 123, 123, 180, 360)
+  }
   fill(color5);
-  rect(470, 330 - rectLenght16/2, 128, 80 + rectLenght16/2, 0, 0, 0, 100);
+  rect(470, 330 - rectLenght16 / 2, 128, 80 + rectLenght16 / 2, 0, 0, 0, 100);
 
   //cerchio
   stroke(color6)
@@ -1676,7 +1676,7 @@ function ruotaQuad() {
 }
 
 function sound_two(song) {
-  setInterval(function() {
+  setInterval(function () {
     song.setVolume(0.4);
     if (song.isPlaying()) {
       song.pause();
@@ -1687,7 +1687,7 @@ function sound_two(song) {
 }
 
 function sound_three(song) {
-  setInterval(function() {
+  setInterval(function () {
     if (song.isPlaying()) {
       song.pause();
     } else {
@@ -1698,7 +1698,7 @@ function sound_three(song) {
 
 function sound_four(song) {
   song.setVolume(1);
-  setInterval(function() {
+  setInterval(function () {
     if (song.isPlaying()) {
       song.pause();
     } else {
@@ -1709,7 +1709,7 @@ function sound_four(song) {
 
 function sound_five(song) {
   song.setVolume(1);
-  setInterval(function() {
+  setInterval(function () {
     if (song.isPlaying()) {
       song.pause();
     } else {

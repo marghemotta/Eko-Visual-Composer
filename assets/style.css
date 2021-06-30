@@ -26,8 +26,8 @@ body{
 }
 
 .button__start{
-  font-size: 2vw;
-  padding: 10px 20px;
+  font-size: 33px;
+  padding: 10px 30px 12px;
   border-radius: 100px;
   background-color: rgb(212, 49, 93);
   color: white;
